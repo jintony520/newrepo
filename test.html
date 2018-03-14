@@ -1,0 +1,32 @@
+<html lang="zh-cmn-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>vue模板</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{ message.split(' ').reverse().join('') }}</p>
+    <div v-bind:id="dynamicId"></div>
+    <p v-if="seen">现在你看到我了</p>
+  </div>
+</body>
+<script src="jquery/jquery-1.11.1.min.js"></script>
+
+<script src="vue/vue.js"></script>
+<script src="vue/axios.min.js"></script>
+
+<script>
+$(function(){
+  var vm = new Vue({
+  // 选项
+    el:'#app',
+    data:{message:666666,dynamicId:1,ok:false,seen:true},
+    created:function(){
+      console.log('a is:'+this.a);
+    }
+  })
+  vm.seen=false;
+})
+</script>
+</html>
